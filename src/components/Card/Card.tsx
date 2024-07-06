@@ -1,17 +1,17 @@
+import { PropsWithChildren, ReactNode } from "react";
 import "./Card.scss";
 
-const Card = () => {
-  return (
-    <div className="card">
-      <h3>Card heading</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Laudantium,
-        quos voluptatem pariatur animi provident repellendus eius dolores
-        doloremque nostrum alias ad beatae repellat quasi soluta eum! Quam
-        adipisci voluptatem nostrum.
-      </p>
-    </div>
-  );
+const Header: React.FC<PropsWithChildren> = ({ children }) => (
+  <h3>{children}</h3>
+);
+
+const Body: React.FC<PropsWithChildren> = ({ children }) => <p>{children}</p>;
+
+const Card = ({ children }: { children?: ReactNode }) => {
+  return <div className="card">{children}</div>;
 };
+
+Card.Header = Header;
+Card.Body = Body;
 
 export default Card;

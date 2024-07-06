@@ -1,16 +1,21 @@
+import { PropsWithChildren, ReactNode } from "react";
 import "./Header.scss";
 
-const Header = () => {
-  const links: string[] = ["first link", "second link"];
+const Title: React.FC<PropsWithChildren> = ({ children }) => (
+  <h1 className="title">{children}</h1>
+);
 
-  return (
-    <div className="header">
-      <h1 className="title">Heading</h1>
-      {links.map((link) => (
-        <a>{link}</a>
-      ))}
-    </div>
-  );
+const Link = ({ children, to }: { children: ReactNode; to: string }) => (
+  <a className="link" href={to}>
+    {children}
+  </a>
+);
+
+const Header = ({ children }: { children?: ReactNode }) => {
+  return <div className="header">{children}</div>;
 };
+
+Header.Title = Title;
+Header.Link = Link;
 
 export default Header;
