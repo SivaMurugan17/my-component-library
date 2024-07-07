@@ -40,10 +40,12 @@ function App() {
         </Button>
         <Button variant="secondary">Click</Button>
         <Form>
+          <Form.Header>Login</Form.Header>
           <Form.Label>Name</Form.Label>
           <Form.Input />
           <Form.Label>Email</Form.Label>
           <Form.Input />
+          <Button variant="primary">Submit</Button>
         </Form>
         <Footer />
       </Page>
