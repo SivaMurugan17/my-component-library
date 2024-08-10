@@ -1,3 +1,16 @@
+@import "../../assets/scss/mixins.scss";
+
 .page {
-  min-height: 100vh;
+  display: grid;
+  gap: 1rem;
+}
+
+@include desktop {
+  .page {
+    grid-template-columns: repeat(4, 1fr);
+
+    .sidebar {
+      grid-column: 4 / span 1;
+    }
+  }
 }

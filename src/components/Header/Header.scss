@@ -1,20 +1,24 @@
+@import "../../assets/scss/mixins.scss";
+
 .header {
-  position: sticky;
-  top: 0px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 0px 10px;
+  justify-content: space-between;
+  padding: 0 10px;
+
   background-color: purple;
   color: white;
 
-  .title {
-    margin: 10px;
-    margin-right: auto;
+  .navigation {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
   }
 
-  .link {
-    color: white;
-    text-decoration: none;
+  @include mobile {
+    .navigation {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }
