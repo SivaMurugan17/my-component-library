@@ -1,24 +1,50 @@
 @import "../../assets/scss/mixins.scss";
 
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 10px;
+  ul {
+    list-style: none;
+  }
+}
 
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   background-color: purple;
   color: white;
 
-  .navigation {
-    display: flex;
-    gap: 1rem;
-    list-style: none;
+  .desktop-links {
+    display: none;
   }
 
-  @include mobile {
-    .navigation {
+  @include tablet {
+    .desktop-links {
       display: flex;
-      flex-direction: column;
+      gap: 10px;
     }
+
+    .hamburger-icon {
+      display: none;
+    }
+  }
+}
+
+.navigation-sidebar {
+  position: fixed;
+  background-color: purple;
+  color: white;
+  min-height: 100vh;
+  min-width: 300px;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+@include tablet {
+  .navigation-sidebar {
+    display: none;
   }
 }

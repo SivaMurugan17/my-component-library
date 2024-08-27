@@ -11,7 +11,12 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   return (
     <>
-      <Header />
+      <Header>
+        <Header.Link>Home</Header.Link>
+        <Header.Link>About</Header.Link>
+        <Header.Link>Contact</Header.Link>
+        <Header.Link>Profile</Header.Link>
+      </Header>
       <Page>
         <Page.Content>
           <Card>
